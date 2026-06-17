@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Response Form</title>
+</head>
+<body>
+    <center>
+    <h1>Student Internship Form</h1>
+    </center>
+    <form>
+        <table>
+            <tr>
+                <td>Full Name: </td>
+                <td>
+                    <input type="text", placeholder="Enter Your Full Name">
+                </td>
+            </tr>
+            <tr>
+                <td>Email Address: </td>
+                <td>
+                    <input type="email", placeholder="Enter Your Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Preferred Internship Type:
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" value="on-site" name="intern_type"> On-Site
+                    <input type="radio"value="remote" name="intern_type">Remote
+                </td>
+            </tr>
+            <tr>
+                <td>Internship Duration:</td>
+                <td>
+                    <select name="duration">
+                        <option value="6_weeks">6 Weeks</option>
+                        <option value="3_months">3 Months</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Skills of Interest
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="checkbox" value="web_dev" name="interest">Web Development
+                <input type="checkbox" value="data_analysis" name="interest">Data Analysis
+                <input type="checkbox" value="mobile_apps" name="interest">Mobile Apps
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="submit_btn" value="Submit button">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
