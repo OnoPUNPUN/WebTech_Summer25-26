@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin: 20px auto;
+    width: 600px;
+}
+
+#heading-text {
+    font-size: 2em;
+}
+
+.profile-section {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#std-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+#dept-name, #std-id, #std-bio {
+    font-size: 1em;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.profile-section img {
+    border-radius: 10px;
+    margin: 10px 0;
+    width: 250px;
+    height: 250px;
+}
+
+
+
+footer {
+    text-align: center;
+    margin: 20px auto;
+    width: 600px;
+    font-size: 1em;
+}
+
+#std-bio {
+    line-height: 1.5em;
+}
+
