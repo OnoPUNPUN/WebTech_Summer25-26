@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+  </head>
+
+  <body>
+    <center>
+      <h2>Student Registration From</h2>
+    </center>
+    <form onsubmit="return onSubmitHandel();">
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Phone Number:</label></td>
+          <td><input type="tel" id="phone" name="phone" /></td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td><input type="number" id="age" name="age" min="1" /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td>
+            <input type="password" id="password" name="password" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="confirmPassword">Confirm Password:</label></td>
+          <td>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="gender">Gender:</label></td>
+          <td>
+            <select id="gender" name="gender">
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="message">Message:</label></td>
+          <td>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center">
+            <button type="submit">Register</button>
+          </td>
+        </tr>
+      </table>
+      <div id="errorMessages" style="color: red; margin-top: 12px"></div>
+    </form>
+    <script>
+      function onSubmitHandel() {
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var phone = document.getElementById("phone").value.trim();
+        var age = document.getElementById("age").value.trim();
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var gender = document.getElementById("gender").value;
+        var message = document.getElementById("message").value.trim();
+
+        var errorMessages = [];
+
+        if (!name) {
+          errorMessages.push("Name is required.");
+        }
+        if (!email) {
+          errorMessages.push("Email is required.");
+        }
+        if (!phone) {
+          errorMessages.push("Phone number is required.");
+        }
+        if (!age) {
+          errorMessages.push("Age is required.");
+        }
+        if (!password) {
+          errorMessages.push("Password is required.");
+        }
+        if (!confirmPassword) {
+          errorMessages.push("Confirm password is required.");
+        }
+        if (!gender) {
+          errorMessages.push("Gender is required.");
+        }
+        if (!message) {
+          errorMessages.push("Message is required.");
+        }
+
+        if (email) {
+          if (
+            !email.includes("@") ||
+            !email.includes(".") ||
+            email.indexOf("@") <= 0 ||
+            email.lastIndexOf(".") <= email.indexOf("@") + 1
+          ) {
+            errorMessages.push("Please enter a valid email address.");
+          }
+        }
+
+        var cleanedPhone = phone.replace(/\D/g, "");
+        if (cleanedPhone.length !== 11) {
+          errorMessages.push("Phone number must be exactly 11 digits.");
+        }
+
+        var ageValue = parseInt(age, 10);
+        if (isNaN(ageValue) || ageValue <= 0) {
+          errorMessages.push("Please enter a valid age.");
+        } else if (ageValue >= 25) {
+          errorMessages.push("Age must be less than 25.");
+        }
+
+        if (password.length < 6) {
+          errorMessages.push("Password must be at least 6 characters long.");
+        }
+
+        if (password !== confirmPassword) {
+          errorMessages.push("Password and confirm password must match.");
+        }
+
+        var errorContainer = document.getElementById("errorMessages");
+        if (errorMessages.length > 0) {
+          errorContainer.innerHTML =
+            "<ul><li>" + errorMessages.join("</li><li>") + "</li></ul>";
+          return false;
+        }
+
+        errorContainer.innerHTML =
+          "<h3>Form Submitted Successfully</h3>" +
+          "Name: " +
+          name +
+          "<br>" +
+          "Email: " +
+          email +
+          "<br>" +
+          "Phone: " +
+          phone +
+          "<br>" +
+          "Age: " +
+          age +
+          "<br>" +
+          "Gender: " +
+          gender +
+          "<br>" +
+          "Message: " +
+          message;
+        return false;
+      }
+    </script>
+  </body>
+</html>
