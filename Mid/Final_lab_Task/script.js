@@ -3,7 +3,7 @@ const greeting = document.getElementById("greeting");
 const hour = new Date().getHours();
 
 if (hour < 12) {
-  greeting.innerText = "Good Morning";
+  greeting.innerText = "Good Moring";
 } else if (hour < 18) {
   greeting.innerText = "Good Afternoon";
 } else {
@@ -67,7 +67,6 @@ form.addEventListener("submit", function (event) {
   }
 
   if (valid) {
-    alert("Message Sent Successfully!");
-    form.reset();
+    alert("Message Sent Succesfuly!");
   }
 });
