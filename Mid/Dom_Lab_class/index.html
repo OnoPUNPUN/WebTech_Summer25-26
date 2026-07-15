@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 id="pageTitle">Light Mode</h1>
+    <button id="switchBtn" onclick="toggleMode()">Switch Mode</button>
+
+    <script>
+      function toggleMode() {
+        var body = document.body;
+        var title = document.getElementById("pageTitle");
+        var button = document.getElementById("switchBtn");
+
+        if (body.style.backgroundColor === "white") {
+          body.style.backgroundColor = "black";
+          body.style.color = "white";
+          title.textContent = "Dark Mode";
+          button.textContent = "Switch to light Mode";
+        } else {
+          body.style.backgroundColor = "white";
+          body.style.color = "black";
+          title.textContent = "Light Mode";
+
+          button.textContent = "Switch to Dark Mode";
+        }
+      }
+    </script>
+  </body>
+</html>

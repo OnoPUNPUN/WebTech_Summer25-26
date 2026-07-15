@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tonmoy Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <button id="themeBtn" class="theme-toggle">Dark Mode</button>
+      <img
+        src="assets/images/coverImage.jpg"
+        class="cover-image"
+        alt="cover image"
+      />
+      <div class="hero-content">
+        <img
+          src="assets/images/punpun.jpg"
+          class="profile-image"
+          alt="profile image"
+        />
+        <h1>Wasimul Bari Tonmoy</h1>
+        <p id="greeting"></p>
+      </div>
+    </header>
+
+    <nav>
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('projects')">Projects</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </nav>
+
+    <section id="about" class="content-section">
+      <h2>About Me</h2>
+      <p>
+        I am a Computer Science and Engineering undergraduate at American
+        International University-Bangladesh (AIUB) with a strong interest in
+        backend development and software engineering. My primary tech stack
+        includes Node.js, Express.js, TypeScript, PostgreSQL, Prisma, Docker,
+        and Flutter. I enjoy building REST APIs, backend systems, and
+        cross-platform mobile applications while focusing on clean,
+        maintainable, and scalable code. Through personal projects, I have
+        gained experience in authentication, database design, API development,
+        mobile app integration, and modern development workflows using Git and
+        GitHub. I am currently expanding my knowledge in NestJS, cloud
+        technologies, and system design. In the future, I also aspire to explore
+        AI/ML engineering with Python and deepen my understanding of intelligent
+        systems and data-driven applications.
+      </p>
+      <p id="github">
+        Have a Look Into My <a href="https://github.com/OnoPUNPUN">GitHub</a>
+      </p>
+    </section>
+    <section id="projects" class="content-section hidden">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>New World Hive (Multi-Vendor E-Commerce Platform)</h3>
+        <ul class="list-details">
+          <li>
+            Developed a multi-purpose e-commerce platform enabling online
+            shopping, vendor storefront creation, and order management.
+          </li>
+          <li>
+            Implemented product browsing, search, secure checkout, and delivery
+            workflows.
+          </li>
+          <li>
+            Integrated backend APIs, authentication, and scalable business
+            logic.
+          </li>
+        </ul>
+        <a href="https://apps.apple.com/us/app/hive-superstore/id6761335574"
+          >AppStore</a
+        >
+      </div>
+      <div class="card">
+        <h3>mChauffeur (Premium Chauffeur Booking Platform)</h3>
+        <ul class="list-details">
+          <li>
+            Developed a chauffeur booking platform for airport transfers,
+            executive travel, and premium trans- portation services.
+          </li>
+          <li>
+            Implemented ride booking workflows, trip scheduling, fare
+            estimation, and trip tracking features.
+          </li>
+          <li>Integrated maps, location services, and backend APIs.</li>
+        </ul>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.medicine.mart&hl=en_US"
+        >
+          Play Store</a
+        >
+      </div>
+      <div class="card">
+        <h3>Hikari (Manga Reader Application)</h3>
+        <ul class="list-details">
+          <li>
+            Built a manga reading application using Flutter, Riverpod, and Dio.
+          </li>
+          <li>Implemented vertical scrolling and page-turn reading modes.</li>
+          <li>
+            Integrated remote content fetching and optimized reading
+            performance.
+          </li>
+        </ul>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.medicine.mart&hl=en_US"
+        >
+          Play Store</a
+        >
+      </div>
+    </section>
+    <section id="contact" class="content-section hidden">
+      <h2>Contact Me</h2>
+
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" />
+
+        <small id="nameError"></small>
+
+        <input type="email" id="email" placeholder="Your Email" />
+
+        <small id="emailError"></small>
+
+        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+
+        <small id="messageError"></small>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

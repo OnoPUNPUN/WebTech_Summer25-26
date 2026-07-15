@@ -1,0 +1,9 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  padding: 100px;
+}
+
+#switchBtn {
+  padding: 10px 20px;
+}
